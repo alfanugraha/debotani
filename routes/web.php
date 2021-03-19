@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TabunganController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,6 @@ Route::get('/student/{id}/edit', [StudentController::class, 'edit']);
 Route::patch('student/{id}', [StudentController::class, 'update']);
 
 // Route::resource('student', StudentController::class);
+Route::get('/tabungan', [TabunganController::class, 'index']);
+Route::get('/tabungan/create', [TabunganController::class, 'create']);
+Route::post('/tabungan', [TabunganController::class, 'store']);
