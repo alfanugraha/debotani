@@ -16,7 +16,7 @@ use App\Http\Controllers\TabunganController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 
@@ -25,7 +25,7 @@ Route::get('/about', function () {
     return view('about', ['nama' => $nama]);
 });
 
-//Route::get('/pegawai', [PegawaiController::class, 'index']); 
+//Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::get('/student', [StudentController::class, 'index']);
 Route::get('/student/create', [StudentController::class, 'create']);
 Route::get('/student/{id}', [StudentController::class, 'show']);
@@ -38,3 +38,6 @@ Route::patch('student/{id}', [StudentController::class, 'update']);
 Route::get('/tabungan', [TabunganController::class, 'index']);
 Route::get('/tabungan/create', [TabunganController::class, 'create']);
 Route::post('/tabungan', [TabunganController::class, 'store']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

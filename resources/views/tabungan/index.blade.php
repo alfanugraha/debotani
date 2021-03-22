@@ -1,7 +1,7 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 @section('title', 'Tabungan')
-    
+
 @section('container')
 <div class="container">
     <div class="row">
