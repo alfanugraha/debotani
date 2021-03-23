@@ -1,7 +1,12 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            {{-- <x-jet-authentication-card-logo /> --}}
+            <div class="login-wrap" style="background: transparent; box-shadow: unset;">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="fa fa-user-o"></span>
+                </div>
+            </div>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
