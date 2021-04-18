@@ -4,8 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AmanahBadanUsahaController;
 use App\Http\Controllers\AmanahController;
-use App\Http\Controllers\StudentController;
-use App\Http\Controllers\TabunganController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BimapanController;
 use App\Http\Controllers\DepositoBadanUsahaController;
