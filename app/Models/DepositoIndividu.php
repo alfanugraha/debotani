@@ -20,6 +20,7 @@ class DepositoIndividu extends Model
         'alamat_1',
         'alamat_2',
         'identitas',
+        'file_id',
         'tanggal_terbit',
         'tanggal_jatuh_tempo',
         'jenis_kelamin',
@@ -44,5 +45,6 @@ class DepositoIndividu extends Model
         'pendapatan',
         'tujuan_buka_rek',
         'pencucian_uang',
+        'verified',
     ];
 }

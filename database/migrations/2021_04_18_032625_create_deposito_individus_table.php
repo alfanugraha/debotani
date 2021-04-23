@@ -25,6 +25,7 @@ class CreateDepositoIndividusTable extends Migration
             $table->string('alamat_1')->nullable();
             $table->string('alamat_2')->nullable();
             $table->string('identitas')->nullable();
+            $table->string('file_id')->nullable();
             $table->string('tanggal_terbit')->nullable();
             $table->string('tanggal_jatuh_tempo')->nullable();
             $table->string('jenis_kelamin')->nullable();
@@ -49,6 +50,7 @@ class CreateDepositoIndividusTable extends Migration
             $table->string('pendapatan')->nullable();
             $table->string('tujuan_buka_rek')->nullable();
             $table->string('pencucian_uang')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamps();
         });
     }

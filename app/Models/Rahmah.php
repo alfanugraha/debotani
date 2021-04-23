@@ -20,6 +20,7 @@ class Rahmah extends Model
         'identitas',
         'no_id',
         'tanggal_berlaku_id',
+        'file_id',
         'agama',
         'npwp',
         'alamat_1',
@@ -37,11 +38,14 @@ class Rahmah extends Model
         'sumber_dana',
         'tujuan_buka_rek',
         'setoran_1',
+        'setoran_2',
+        'jangka_waktu',
         'nama_ahli_waris',
         'tempat_lahir_ahli_waris',
         'tanggal_lahir_ahli_waris',
         'alamat_ahli_waris',
         'telp_rumah_ahli_waris',
         'telp_hp_ahli_waris',
+        'verified',
     ];
 }

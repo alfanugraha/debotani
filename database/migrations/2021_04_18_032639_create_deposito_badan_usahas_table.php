@@ -25,8 +25,9 @@ class CreateDepositoBadanUsahasTable extends Migration
             $table->string('izin')->nullable();
             $table->string('no_izin')->nullable();
             $table->string('npwp')->nullable();
+            $table->string('file_npwp')->nullable();
             $table->string('lap_keuangan')->nullable();
-            $table->string('lap_keuangan_status')->nullable();
+            $table->string('file_lap_keuangan')->nullable();
             $table->string('pengurus')->nullable();
             $table->string('pemangan_ttd')->nullable();
             $table->string('penghasilan_usaha')->nullable();
@@ -46,6 +47,7 @@ class CreateDepositoBadanUsahasTable extends Migration
             $table->string('pendapatan')->nullable();
             $table->string('tujuan_buka_rek')->nullable();
             $table->string('pencucian_uang')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamps();
         });
     }

@@ -25,6 +25,7 @@ class CreateSimapansTable extends Migration
             $table->string('identitas')->nullable();
             $table->string('no_id')->nullable();
             $table->string('tanggal_berlaku_id')->nullable();
+            $table->string('file_id')->nullable();
             $table->string('agama')->nullable();
             $table->string('npwp')->nullable();
             $table->string('alamat_1')->nullable();
@@ -42,12 +43,15 @@ class CreateSimapansTable extends Migration
             $table->string('sumber_dana')->nullable();
             $table->string('tujuan_buka_rek')->nullable();
             $table->string('setoran_1')->nullable();
+            $table->string('setoran_2')->nullable();
+            $table->string('jangka_waktu')->nullable();
             $table->string('nama_ahli_waris')->nullable();
             $table->string('tempat_lahir_ahli_waris')->nullable();
             $table->string('tanggal_lahir_ahli_waris')->nullable();
             $table->string('alamat_ahli_waris')->nullable();
             $table->string('telp_rumah_ahli_waris')->nullable();
             $table->string('telp_hp_ahli_waris')->nullable();
+            $table->boolean('verified')->default(0);
             $table->timestamps();
         });
     }
