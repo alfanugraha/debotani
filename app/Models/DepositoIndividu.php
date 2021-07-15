@@ -46,5 +46,6 @@ class DepositoIndividu extends Model
         'tujuan_buka_rek',
         'pencucian_uang',
         'verified',
+        'verified_by'
     ];
 }

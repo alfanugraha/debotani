@@ -19,7 +19,7 @@
 			<div class="wrap-login100 p-b-160 p-t-50">
 				<form class="login100-form validate-form" action="{{ route('login') }}" method="post">
 					<span class="login100-form-title p-b-43">
-                        Account Login
+                        Login
 					</span>
 
                     @csrf
@@ -48,23 +48,21 @@
                     @endif
 
                     <div class="wrap-input100 rs1 validate-input" data-validate = "Username is required">
-                        <input class="input100" type="text" name="email">
-                        <span class="label-input100">Email</span>
+                        <input class="input100" type="text" name="email" placeholder="Email">
                     </div>
                     <div class="wrap-input100 rs2 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" name="password">
-                        <span class="label-input100">Password</span>
+                        <input class="input100" type="password" name="password" placeholder="Password">
                     </div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit" >
-							Sign in
+							Masuk
 						</button>
 					</div>
 
 					<div class="text-center w-full p-t-23">
-						<a href="{{ route('register') }}" class="txt1">
-							Register
+						<a href="/" class="txt1">
+							Kembali
 						</a>
 					</div>
 				</form>

@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Halaman Admin</title>
+    <title>Admin de'Botani</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <link href="/css/admin.css" rel="stylesheet">
 </head>
 <body>
@@ -61,7 +66,7 @@
                                             {{-- <h6 tabindex="-1" class="dropdown-header">Header</h6> --}}
                                             {{-- <button type="button" tabindex="0" class="dropdown-item">Actions</button> --}}
                                             {{-- <div tabindex="-1" class="dropdown-divider"></div> --}}
-                                            <a class="nav-link" href="{{ route('logout') }}">Logout</a>
+                                            <a class="nav-link" href="{{ route('logout') }}">Keluar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -113,7 +118,7 @@
                 </div>    <div class="scrollbar-sidebar">
                     <div class="app-sidebar__inner">
                         <ul class="vertical-nav-menu">
-                            {{-- <li class="app-sidebar__heading">Dashboards</li> --}}
+                            <li class="app-sidebar__heading">Admin<a href="/admin">Beranda</a></li>
                             {{-- <li>
                                 <a href="admin(tabungan).php" class="mm-active">
                                     <i class="metismenu-icon pe-7s-display2"></i>
@@ -126,68 +131,68 @@
                             </li> --}}
 
                             <li class="app-sidebar__heading">Produk</li>
-                            <li>
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-diamond"></i>
-                                    Tabungan
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="{{url('/admin/rahmah')}}">
-                                            <i class="metismenu-icon"></i>
-                                            Tabungan Rahmah
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/admin/amanah')}}">
-                                            <i class="metismenu-icon">
-                                            </i>Tabungan Amanah
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/admin/bimapan')}}">
-                                            <i class="metismenu-icon">
-                                            </i>Tabungan Bimapan
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/admin/simapan')}}">
-                                            <i class="metismenu-icon">
-                                            </i>SIMAPAN
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-car"></i>
-                                    Deposito
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Tabungan
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="{{url('/admin/rahmah')}}">
+                                                <i class="metismenu-icon"></i>
+                                                Tabungan Rahmah
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('/admin/amanah')}}">
+                                                <i class="metismenu-icon">
+                                                </i>Tabungan Amanah
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('/admin/bimapan')}}">
+                                                <i class="metismenu-icon">
+                                                </i>Tabungan Bimapan
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('/admin/simapan')}}">
+                                                <i class="metismenu-icon">
+                                                </i>SIMAPAN
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Deposito
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                    </a>
+                                    <ul>
 
-                                    <li>
-                                        <a href="{{url('/admin/individu')}}">
-                                            <i class="metismenu-icon">
-                                            </i>Deposito Rahmah
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url('/admin/prima')}}">
-                                            <i class="metismenu-icon">
-                                            </i>Deposito Prima
-                                        </a>
-                                    </li>
+                                        <li>
+                                            <a href="{{url('/admin/individu')}}">
+                                                <i class="metismenu-icon">
+                                                </i>Deposito Rahmah
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{url('/admin/prima')}}">
+                                                <i class="metismenu-icon">
+                                                </i>Deposito Prima
+                                            </a>
+                                        </li>
 
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <i class="metismenu-icon pe-7s-display2"></i>
-                                    Pembiayaan
-                                </a>
-                            </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{url('/admin/verifikasi')}}">
+                                        <i class="metismenu-icon pe-7s-display2"></i>
+                                        Verifikasi
+                                    </a>
+                                </li>
 
                         </ul>
                     </div>

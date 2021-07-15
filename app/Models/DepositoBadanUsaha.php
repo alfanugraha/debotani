@@ -39,5 +39,7 @@ class DepositoBadanUsaha extends Model
         'pendapatan',
         'tujuan_buka_rek',
         'pencucian_uang',
+        'verified',
+        'verified_by'
     ];
 }

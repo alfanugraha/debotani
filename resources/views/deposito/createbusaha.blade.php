@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Deposito</title>
+    <title>Deposito | Badan Usaha</title>
 
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -18,16 +18,22 @@
 
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
-    <link href="css/popup.css" rel="stylesheet" media="all">
+    <link href="/css/main.css" rel="stylesheet" media="all">
+    <link href="/css/popup.css" rel="stylesheet" media="all">
 </head>
 
 <body>
+<a class="fixed-top bg-white text-center" href="/">
+        <br><img src="http://localhost:8000/img/logodebotani.png" >
+        <br><br>
+    </a>
+    <br><br>
     <div class="page-wrapper bg-green p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Deposito</h2>
+                    <br>
+                    <h2 style="padding-left: 30px;" class="title">Pembukaan Deposito (Badan Usaha)</h2>
                 </div>
                 <div class="card-body">
                     <form method="post" action="/deposito/jenis/badan-usaha/create">
@@ -35,30 +41,30 @@
                         <div class="form-row">
                             <div class="name">Nama Instansi</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama_usaha">
+                                <input class="input--style-6 form-control @error('nama_nasabah') is-invalid @enderror" type="text" name="nama_usaha">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Jenis Usaha</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="jenis_usaha">
+                                <input class="input--style-6 form-control @error('jenis_usaha') is-invalid @enderror" type="text" name="jenis_usaha">
                                 <div class="name">telp</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="telp">
+                                    <input class="input--style-6 form-control @error('telp') is-invalid @enderror" type="text" name="telp">
                                 </div>
                                 <div class="name">Fax</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="fax">
+                                    <input class="input--style-6 form-control @error('fax') is-invalid @enderror" type="text" name="fax">
                                 </div>
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Alamat</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat">
+                                <input class="input--style-6 form-control @error('alamat') is-invalid @enderror" type="text" name="alamat">
                                 <div class="name">Kode Pos</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="kode_pos">
+                                    <input class="input--style-6 form-control @error('kode_pos') is-invalid @enderror" type="text" name="kode_pos">
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -66,20 +72,24 @@
                             <div class="name">Izin/Legalitas Usaha</div>
                             <div class="value">
                                 <select name="izin" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="SIUP">SIUP</option>
                                     <option value="TDP">TDP</option>
                                     <option value="Akte Pendirian">Akte Pendirian</option>
                                 </select>
                                 <div class="name">No.</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="no_izin">
+                                    <input class="input--style-6 form-control @error('no_izin') is-invalid @enderror" type="text" name="no_izin">
                                 </div>
                                 <div class="name">NPWP</div>
                                 <div class="value"></div>
                                 <div class="name">No.</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="npwp">
+                                    <input class="input--style-6 form-control @error('npwp') is-invalid @enderror" type="text" name="npwp">
+                                </div>
+                                <div class="name">Upload NPWP</div>
+                                <div class="value">
+                                    <input class="input--style-6 form-control @error('file_npwp') is-invalid @enderror" type="file" name="file_npwp" >
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -87,31 +97,31 @@
                             <div class="name">Laporan Keuangan</div>
                             <div class="value">
                                 <select name="lap_keuangan" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Islam">Neraca</option>
                                     <option value="Kristen">Laba Rugi</option>
                                 </select>
-                                <div class="name"></div>
+                                <div class="name">Upload Laporan Keuangan</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="lap_keuangan_status" placeholder="terlampir">
+                                    <input class="input--style-6 form-control @error('file_lap_keuangan') is-invalid @enderror" type="file" name="file_lap_keuangan" >
                                 </div>
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Pengurus Perusahaan</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="pengurus" placeholder="1.___">
+                                <input class="input--style-6 form-control @error('pengurus') is-invalid @enderror" type="text" name="pengurus" placeholder="1.___">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Pemangan Contoh TTD</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="pemangan_ttd" placeholder="2.___">
+                                <input class="input--style-6 form-control @error('pemangan_ttd') is-invalid @enderror" type="text" name="pemangan_ttd" placeholder="2.___">
                             </div>
                             <div class="name">Penghasilan Per Bulan</div>
                             <div class="value">
                                 <select name="penghasilan_usaha" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="< 100 Juta">< 100 Juta</option>
                                     <option value="> 100 Juta">> 100 Juta</option>
                                     <option value="< 100 Juta">< 500 Juta</option>
@@ -125,47 +135,47 @@
                             <div class="value"></div>
                             <div class="name">Nama</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama_ahli_waris">
+                                <input class="input--style-6 form-control @error('nama_ahli_waris') is-invalid @enderror" type="text" name="nama_ahli_waris">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Alamat</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat_ahli_waris">
+                                <input class="input--style-6 form-control @error('alamat_ahli_waris') is-invalid @enderror" type="text" name="alamat_ahli_waris">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Hubungan Keluarga</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="hub_keluarga">
+                                <input class="input--style-6 form-control @error('hub_keluarga') is-invalid @enderror" type="text" name="hub_keluarga">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Nominal Deposito</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nominal_deposito" placeholder="Rp.">
+                                <input class="input--style-6 form-control @error('nominal_deposito') is-invalid @enderror" type="text" name="nominal_deposito" placeholder="Rp.">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Terbilang</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="terbilang">
+                                <input class="input--style-6 form-control @error('terbilang') is-invalid @enderror" type="text" name="terbilang">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Jangka Waktu</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="jangka_waktu" placeholder="____Bulan______">
+                                <input class="input--style-6 form-control @error('jangka_waktu') is-invalid @enderror" type="text" name="jangka_waktu" placeholder="____Bulan______">
                                 <div class="name">Tanggal Valuta</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="tanggal_valuta">
+                                        <input type="date" class="form-control form-control @error('tanggal_valuta') is-invalid @enderror" name="tanggal_valuta">
                                     </div>
                                 </div>
                                 <div class="name">Tanggal Jatuh Tempo</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="tanggal_jatuh_tempo_valuta">
+                                        <input type="date" class="form-control @error('tanggal_jatuh_tempo_valuta') is-invalid @enderror" name="tanggal_jatuh_tempo_valuta">
                                     </div>
                                 </div>
                             </div>
@@ -175,11 +185,11 @@
                             <div class="value">
                                 <div class="name">Untuk Shaibul Maal(Nasabah)</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="nisbah_maal" placeholder="%">
+                                    <input class="input--style-6 form-control @error('nisbah_maal') is-invalid @enderror" type="text" name="nisbah_maal" placeholder="%">
                                 </div>
                                 <div class="name">Untuk Mudharib(Bank)</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="nisbah_mudharib" placeholder="%">
+                                    <input class="input--style-6 form-control @error('nisbah_mudharib') is-invalid @enderror" type="text" name="nisbah_mudharib" placeholder="%">
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -187,14 +197,14 @@
                             <div class="name">Pencairan Deposito</div>
                             <div class="value">
                                 <select name="pencairan_deposito" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Dipindah Ke Tabungan Bina Rahmah">Dipindah Ke Tabungan Bina Rahmah</option>
                                     <option value="Transfer Ke Bank Lain">Transfer Ke Bank Lain</option>
                                     <option value="ARO">Perpanjangan Otomatis (ARO)</option>
                                 </select>
                                 <div class="name">No.Rek.Tabungan</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="no_cif_no_rekening">
+                                    <input class="input--style-6 form-control @error('no_cif_no_rekening') is-invalid @enderror" type="text" name="no_cif_no_rekening">
                                 </div>
                             </div>
                         </div>
@@ -212,7 +222,7 @@
                             <div class="name">Penghasilan Per Bulan</div>
                             <div class="value">
                                 <select name="pendapatan" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="< 1 Juta">< 1 Juta</option>
                                     <option value="1 Juta < 2,5 Juta">1 Juta < 5 Juta</option>
                                     <option value="5 Juta < 10 Juta">5 Juta < 10 Juta</option>
@@ -224,12 +234,12 @@
                             <div class="value"></div>
                             <div class="name">Tujuan Pembukaan</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="tujuan_buka_rek">
+                                <input class="input--style-6 form-control @error('tujuan_buka_rek') is-invalid @enderror" type="text" name="tujuan_buka_rek">
                             </div>
                             <div class="name">Bukan Untuk Pencucian Uang</div>
                             <div class="value">
                                 <select name="pencucian_uang" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Ya">Ya</option>
                                     <option value="Tidak">Tidak</option>
                                 </select>
@@ -262,7 +272,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Daftarkan</button>
                         </div>
                     </form>
                 </div>
@@ -271,11 +281,11 @@
     </div>
 
     <!-- Jquery JS-->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
 
 
     <!-- Main JS-->
-    <script src="js/global.js"></script>
+    <script src="/js/global.js"></script>
 
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 

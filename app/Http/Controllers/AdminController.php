@@ -62,7 +62,7 @@ class AdminController extends Controller
     {
         // $rahmah = Rahmah::all();
 
-        $rahmah = DB::table('rahmahs')->paginate(10);
+        $rahmah = DB::table('rahmahs')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.rahmah', ['rahmah' => $rahmah]);
     }
 
@@ -95,14 +95,21 @@ class AdminController extends Controller
     {
         $rhm = Rahmah::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
     }
 
+    public function rahmahDestroy(Rahmah $id)
+    {
+        Rahmah::destroy($id->id);
+        return redirect('/admin/rahmah')->with('status' ,'Data berhasil dihapus.');
+    }
+
     public function amanahAll()
     {
-        $amanah = DB::table('amanahs')->paginate(10);
+        $amanah = DB::table('amanahs')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.amanah', ['amanah' => $amanah]);
     }
 
@@ -135,14 +142,21 @@ class AdminController extends Controller
     {
         $rhm = Amanah::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
     }
 
+    public function amanahDestroy(Amanah $id)
+    {
+        Amanah::destroy($id->id);
+        return redirect('/admin/amanah')->with('status' ,'Data berhasil dihapus.');
+    }
+
     public function bimapanAll()
     {
-        $bimapan = DB::table('bimapans')->paginate(10);
+        $bimapan = DB::table('bimapans')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.bimapan', ['bimapan' => $bimapan]);
     }
 
@@ -175,14 +189,21 @@ class AdminController extends Controller
     {
         $rhm = Bimapan::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
     }
 
+    public function bimapanDestroy(Bimapan $id)
+    {
+        Bimapan::destroy($id->id);
+        return redirect('/admin/bimapan')->with('status' ,'Data berhasil dihapus.');
+    }
+
     public function simapanAll()
     {
-        $simapan = DB::table('simapans')->paginate(10);
+        $simapan = DB::table('simapans')->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.simapan', ['simapan' => $simapan]);
     }
 
@@ -215,9 +236,16 @@ class AdminController extends Controller
     {
         $rhm = Simapan::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
+    }
+
+    public function simapanDestroy(Simapan $id)
+    {
+        Simapan::destroy($id->id);
+        return redirect('/admin/simapan')->with('status' ,'Data berhasil dihapus.');
     }
 
     public function depositoRahmahAll()
@@ -256,9 +284,16 @@ class AdminController extends Controller
     {
         $rhm = DepositoIndividu::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
+    }
+
+    public function depositoRahmahDestroy(DepositoIndividu $id)
+    {
+        DepositoIndividu::destroy($id->id);
+        return redirect('/admin/individu')->with('status' ,'Data berhasil dihapus.');
     }
 
     public function depositoPrimaAll()
@@ -297,9 +332,16 @@ class AdminController extends Controller
     {
         $rhm = DepositoBadanUsaha::find($request->id);
         $rhm->verified = $request->verified;
+        $rhm->verified_by = $request->verified_by;
         $rhm->save();
 
         return response()->json(['success' => 'Verifikasi sudah diganti.']);
+    }
+
+    public function depositoPrimaDestroy(DepositoBadanUsaha $id)
+    {
+        DepositoBadanUsaha::destroy($id->id);
+        return redirect('/admin/prima')->with('status' ,'Data berhasil dihapus.');
     }
 
     public function verifikasi()

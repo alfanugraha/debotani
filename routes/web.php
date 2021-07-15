@@ -84,6 +84,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('rahmah/exportPdf', [AdminController::class, 'rahmahPdf']);
     Route::post('/admin/rahmah/cari', [AdminController::class, 'rahmahSearch']);
     Route::post('/admin/rahmah/verifikasi', [AdminController::class, 'rahmahVerified']);
+    Route::delete('/admin/rahmah/{id}', [AdminController::class, 'rahmahDestroy']);
 
     Route::get('admin/amanah', [AdminController::class, 'amanahAll']);
     Route::get('admin/amanah/{id}', [AdminController::class, 'amanahShow']);
@@ -91,6 +92,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('amanah/exportPdf', [AdminController::class, 'amanahPdf']);
     Route::post('/admin/amanah/cari', [AdminController::class, 'amanahSearch']);
     Route::post('/admin/amanah/verifikasi', [AdminController::class, 'amanahVerified']);
+    Route::delete('/admin/amanah/{id}', [AdminController::class, 'amanahDestroy']);
 
     Route::get('admin/simapan', [AdminController::class, 'simapanAll']);
     Route::get('admin/simapan/{id}', [AdminController::class, 'simapanShow']);
@@ -98,6 +100,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('simapan/exportPdf', [AdminController::class, 'simapanPdf']);
     Route::post('/admin/simapan/cari', [AdminController::class, 'simapanSearch']);
     Route::post('/admin/simapan/verifikasi', [AdminController::class, 'simapanVerified']);
+    Route::delete('/admin/bimapan/{id}', [AdminController::class, 'simapanDestroy']);
 
     Route::get('admin/bimapan', [AdminController::class, 'bimapanAll']);
     Route::get('admin/bimapan/{id}', [AdminController::class, 'bimapanShow']);
@@ -105,6 +108,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('bimapan/exportPdf', [AdminController::class, 'bimapanPdf']);
     Route::post('/admin/bimapan/cari', [AdminController::class, 'bimapanSearch']);
     Route::post('/admin/bimapan/verifikasi', [AdminController::class, 'bimapanVerified']);
+    Route::delete('/admin/bimapan/{id}', [AdminController::class, 'bimapanDestroy']);
 
     Route::get('admin/individu', [AdminController::class, 'depositoRahmahAll']);
     Route::get('admin/individu/{id}', [AdminController::class, 'depositoRahmahShow']);
@@ -112,6 +116,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('individu/exportPdf', [AdminController::class, 'depositoRahmahPdf']);
     Route::post('/admin/individu/cari', [AdminController::class, 'depositoRahmahSearch']);
     Route::post('/admin/individu/verifikasi', [AdminController::class, 'depositoRahmahVerified']);
+    Route::delete('/admin/individu/{id}', [AdminController::class, 'depositoRahmahDestroy']);
 
     Route::get('admin/prima', [AdminController::class, 'depositoPrimaAll']);
     Route::get('admin/prima/{id}', [AdminController::class, 'depositoPrimaShow']);
@@ -119,6 +124,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('prima/exportPdf', [AdminController::class, 'depositoPrimaPdf']);
     Route::post('/admin/prima/cari', [AdminController::class, 'depositoPrimaSearch']);
     Route::post('/admin/prima/verifikasi', [AdminController::class, 'depositoPrimaerified']);
+    Route::delete('/admin/prima/{id}', [AdminController::class, 'depositoPrimaDestroy']);
 
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 });

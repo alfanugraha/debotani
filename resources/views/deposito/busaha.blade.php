@@ -23,11 +23,17 @@
 </head>
 
 <body>
+    <a class="fixed-top bg-white text-center" href="/">
+        <br><img src="http://localhost:8000/img/logodebotani.png" >
+        <br><br>
+    </a>
+    <br><br>
     <div class="page-wrapper bg-green p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Ketentuan-ketentuan</h2>
+                    <br>
+                    <h2 style="padding-left: 30px;" class="title">Ketentuan</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST">

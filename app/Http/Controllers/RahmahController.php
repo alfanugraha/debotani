@@ -38,7 +38,7 @@ class RahmahController extends Controller
         $request->validate([
             'nama_nasabah' => 'required',
             'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required',
+            'tanggal_lahir' => 'required|date_format:Y-m-d|before:2021-01-01',
             'jenis_kelamin' => 'required',
             'status' => 'required',
             'nama_ibu_kandung' => 'required',

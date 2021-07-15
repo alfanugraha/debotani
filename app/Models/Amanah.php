@@ -47,5 +47,6 @@ class Amanah extends Model
         'telp_rumah_ahli_waris',
         'telp_hp_ahli_waris',
         'verified',
+        'verified_by'
     ];
 }

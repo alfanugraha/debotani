@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Deposito</title>
+    <title>Deposito | Perorangan</title>
 
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -23,11 +23,17 @@
 </head>
 
 <body>
+<a class="fixed-top bg-white text-center" href="/">
+        <br><img src="http://localhost:8000/img/logodebotani.png" >
+        <br><br>
+    </a>
+    <br><br>
     <div class="page-wrapper bg-green p-t-100 p-b-50">
         <div class="wrapper wrapper--w900">
             <div class="card card-6">
                 <div class="card-heading">
-                    <h2 class="title">Deposito</h2>
+                    <br>
+                    <h2 style="padding-left: 30px;" class="title">Pembukaan Deposito (Perorangan)</h2>
                 </div>
                 <div class="card-body">
                     <form method="post" action="/deposito/jenis/individu/create">
@@ -35,20 +41,20 @@
                         <div class="form-row">
                             <div class="name">Nama Lengkap</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama_nasabah">
+                                <input class="input--style-6 form-control @error('nama_nasabah') is-invalid @enderror" type="text" name="nama_nasabah" value="{{ old('nama_nasabah') }}">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Nama Ibu Kandung</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama_ibu">
+                                <input class="input--style-6 form-control @error('nama_ibu') is-invalid @enderror" type="text" name="nama_ibu">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Agama</div>
                             <div class="value">
                                 <select name="agama" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Islam">Islam</option>
                                     <option value="Kristen">Kristen</option>
                                     <option value="Katolik">Katolik</option>
@@ -61,14 +67,14 @@
                             <div class="value"></div>
                             <div class="name">Tempat Lahir</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="tempat_lahir">
+                                <input class="input--style-6 form-control @error('tempat_lahir') is-invalid @enderror" type="text" name="tempat_lahir">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Tanggal Lahir</div>
                             <div class="value">
                                 <div class="form-group">
-                                    <input type="date" class="form-control" name="tanggal_lahir">
+                                    <input type="date" class="form-control form-control @error('tanggal_lahir') is-invalid @enderror" name="tanggal_lahir">
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -76,7 +82,7 @@
                             <div class="name">Pendidikan Terakhir</div>
                             <div class="value">
                                 <select name="pendidikan" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="SD">SD</option>
                                     <option value="SLTP">SLTP</option>
                                     <option value="SLTA/Sederajat">SLTA/Sederajat</option>
@@ -91,39 +97,39 @@
                             <div class="value"></div>
                             <div class="name">Alamat</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat_1">
+                                <input class="input--style-6 form-control @error('alamat_1') is-invalid @enderror" type="text" name="alamat_1">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Alamat Surat</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat_!">
+                                <input class="input--style-6 form-control @error('alamat_2') is-invalid @enderror" type="text" name="alamat_2">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Identitas</div>
                             <div class="value">
                                 <select name="identitas" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="KTP">KTP</option>
                                     <option value="Pasport">SIM</option>
                                     <option value="Pasport">Pasport</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
-                                <div class="name">No. ID</div>
+                                <div class="name">Upload identitas</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="tanggal_terbit">
+                                    <input class="input--style-6 form-control @error('file_id') is-invalid @enderror" type="file" name="file_id">
                                 </div>
                                 <div class="name">Tanggal Terbit</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="validid">
+                                        <input type="date" class="form-control form-control @error('tanggal_terbit') is-invalid @enderror" name="tanggal_terbit">
                                     </div>
                                 </div>
                                 <div class="name">Tanggal Jatuh Tempo</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="tanggal_jatuh_tempo">
+                                        <input type="date" class="form-control form-control @error('tanggal_jatuh_tempo') is-invalid @enderror" name="tanggal_jatuh_tempo">
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +138,7 @@
                             <div class="name">Jenis Kelamin</div>
                             <div class="value">
                                 <select name="jenis_kelamin" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Laki-laki">Laki-laki</option>
                                     <option value="Perempuan">Perempuan</option>
                                 </select>
@@ -142,7 +148,7 @@
                             <div class="name">Status Perkawinan</div>
                             <div class="value">
                                 <select name="status" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Menikah">Menikah</option>
                                     <option value="Belum Menikah">Belum Menikah</option>
                                     <option value="Janda/Duda">Janda/Duda</option>
@@ -153,7 +159,7 @@
                             <div class="name">Pekerjaan</div>
                             <div class="value">
                                 <select name="pekerjaan" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
                                     <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
                                     <option value="Wiraswasta">Wiraswasta</option>
@@ -169,18 +175,18 @@
                             <div class="value"></div>
                             <div class="name">Alamat Pekerjaan</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat_kantor">
+                                <input class="input--style-6 form-control @error('alamat_kantor') is-invalid @enderror" type="text" name="alamat_kantor">
                                 <div class="name">Kode Pos</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="kode_pos">
+                                    <input class="input--style-6 form-control @error('kode_pos') is-invalid @enderror" type="text" name="kode_pos">
                                 </div>
                                 <div class="name">Telp</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="telp_kantor">
+                                    <input class="input--style-6 form-control @error('telp_kantor') is-invalid @enderror" type="text" name="telp_kantor">
                                 </div>
                                 <div class="name">Jabatan</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="jabatan">
+                                    <input class="input--style-6 form-control @error('jabatan') is-invalid @enderror" type="text" name="jabatan">
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -188,7 +194,7 @@
                             <div class="name">Email address</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-6" type="email" name="email" placeholder="example@email.com">
+                                    <input class="input--style-6 form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="example@email.com">
                                 </div>
                             </div>
                         </div>
@@ -197,47 +203,47 @@
                             <div class="value"></div>
                             <div class="name">Nama</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nama_ahli_waris">
+                                <input class="input--style-6 form-control @error('nama_ahli_waris') is-invalid @enderror" type="text" name="nama_ahli_waris">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Alamat</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="alamat_ahli_waris">
+                                <input class="input--style-6 form-control @error('alamat_ahli_waris') is-invalid @enderror" type="text" name="alamat_ahli_waris">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Hubungan Keluarga</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="hub_keluarga">
+                                <input class="input--style-6 form-control @error('hub_keluarga') is-invalid @enderror" type="text" name="hub_keluarga">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="name">Nominal Deposito</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="nominal_deposito" placeholder="Rp.">
+                                <input class="input--style-6 form-control @error('nominal_deposito') is-invalid @enderror" type="text" name="nominal_deposito" placeholder="Rp.">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Terbilang</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="terbilang">
+                                <input class="input--style-6 form-control @error('terbilang') is-invalid @enderror" type="text" name="terbilang">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Jangka Waktu</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="jangka_waktu" placeholder="____Bulan______">
+                                <input class="input--style-6 form-control @error('jangka_waktu') is-invalid @enderror" type="text" name="jangka_waktu" placeholder="____Bulan______">
                                 <div class="name">Tanggal Valuta</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="tanggal_valuta">
+                                        <input type="date" class="form-control form-control @error('tanggal_valuta') is-invalid @enderror" name="tanggal_valuta">
                                     </div>
                                 </div>
                                 <div class="name">Tanggal Jatuh Tempo</div>
                                 <div class="value">
                                     <div class="form-group">
-                                        <input type="date" class="form-control" name="tanggal_jatuh_tempo_valuta">
+                                        <input type="date" class="form-control form-control @error('tanggal_jatuh_tempo_valuta') is-invalid @enderror" name="tanggal_jatuh_tempo_valuta">
                                     </div>
                                 </div>
                             </div>
@@ -247,11 +253,11 @@
                             <div class="value">
                                 <div class="name">Untuk Shaibul Maal(Nasabah)</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="nisbah_maal" placeholder="%">
+                                    <input class="input--style-6 form-control @error('nisbah_maal') is-invalid @enderror" type="text" name="nisbah_maal" placeholder="%">
                                 </div>
                                 <div class="name">Untuk Mudharib(Bank)</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="nisbah_mudharib" placeholder="%">
+                                    <input class="input--style-6 form-control @error('nisbah_mudharib') is-invalid @enderror" type="text" name="nisbah_mudharib" placeholder="%">
                                 </div>
                             </div>
                             <div class="name"></div>
@@ -259,14 +265,14 @@
                             <div class="name">Pencairan Deposito</div>
                             <div class="value">
                                 <select name="pencairan_deposito" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Dipindah Ke Tabungan Bina Rahmah">Dipindah Ke Tabungan Bina Rahmah</option>
                                     <option value="Transfer Ke Bank Lain">Transfer Ke Bank Lain</option>
                                     <option value="ARO">Perpanjangan Otomatis (ARO)</option>
                                 </select>
                                 <div class="name">No.Rek.Tabungan</div>
                                 <div class="value">
-                                    <input class="input--style-6" type="text" name="no_cif_no_rekening">
+                                    <input class="input--style-6 form-control @error('no_cif_no_rekening') is-invalid @enderror" type="text" name="no_cif_no_rekening">
                                 </div>
                             </div>
                         </div>
@@ -284,7 +290,7 @@
                             <div class="name">Penghasilan Per Bulan</div>
                             <div class="value">
                                 <select name="pendapatan" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="< 1 Juta">< 1 Juta</option>
                                     <option value="1 Juta < 2,5 Juta">1 Juta < 5 Juta</option>
                                     <option value="5 Juta < 10 Juta">5 Juta < 10 Juta</option>
@@ -296,14 +302,14 @@
                             <div class="value"></div>
                             <div class="name">Tujuan Pembukaan</div>
                             <div class="value">
-                                <input class="input--style-6" type="text" name="tujuan_buka_rek">
+                                <input class="input--style-6 form-control @error('tujuan_buka_rek') is-invalid @enderror" type="text" name="tujuan_buka_rek">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
                             <div class="name">Bukan Untuk Pencucian Uang</div>
                             <div class="value">
                                 <select name="pencucian_uang" class="form-select input--style-6">
-                                    <option selected>Choose</option>
+                                    <option selected>...</option>
                                     <option value="Ya">Ya</option>
                                     <option value="Tidak">Tidak</option>
                                 </select>
@@ -311,12 +317,12 @@
                         </div>
 
                         <div class="card-footer">
-                            <div class="form-check">
+                            {{-- <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Saya setuju dengan <a href="#popup1">ketentuan-ketentuan</a> yang ada
                                 </label>
-                            </div>
+                            </div> --}}
                             <div id="popup1" class="overlay">
                                 <div class="popup2">
                                     <h2>Ketentuan-ketentuan</h2>
@@ -337,7 +343,7 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Daftarkan</button>
                         </div>
                     </form>
                 </div>
