@@ -36,7 +36,7 @@
                     <h2 style="padding-left: 30px;" class="title">Pembukaan Deposito (Perorangan)</h2>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="/deposito/jenis/individu/create">
+                    <form method="post" action="/deposito/jenis/individu/create" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                             <div class="name">Nama Lengkap</div>

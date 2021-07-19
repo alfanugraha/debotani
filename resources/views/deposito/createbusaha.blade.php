@@ -36,12 +36,12 @@
                     <h2 style="padding-left: 30px;" class="title">Pembukaan Deposito (Badan Usaha)</h2>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="/deposito/jenis/badan-usaha/create">
+                    <form method="post" action="/deposito/jenis/badan-usaha/create" enctype="multipart/form-data">
                         @csrf
                         <div class="form-row">
                             <div class="name">Nama Instansi</div>
                             <div class="value">
-                                <input class="input--style-6 form-control @error('nama_nasabah') is-invalid @enderror" type="text" name="nama_usaha">
+                                <input class="input--style-6 form-control @error('nama_usaha') is-invalid @enderror" type="text" name="nama_usaha">
                             </div>
                             <div class="name"></div>
                             <div class="value"></div>
@@ -88,6 +88,9 @@
                                     <input class="input--style-6 form-control @error('npwp') is-invalid @enderror" type="text" name="npwp">
                                 </div>
                                 <div class="name">Upload NPWP</div>
+                                @error('file_npwp')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                                 <div class="value">
                                     <input class="input--style-6 form-control @error('file_npwp') is-invalid @enderror" type="file" name="file_npwp" >
                                 </div>
@@ -102,6 +105,9 @@
                                     <option value="Kristen">Laba Rugi</option>
                                 </select>
                                 <div class="name">Upload Laporan Keuangan</div>
+                                @error('file_lap_keuangan')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                                 <div class="value">
                                     <input class="input--style-6 form-control @error('file_lap_keuangan') is-invalid @enderror" type="file" name="file_lap_keuangan" >
                                 </div>

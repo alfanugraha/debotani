@@ -123,7 +123,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('prima/exportxls', [AdminController::class, 'depositoPrimaXls']);
     Route::get('prima/exportPdf', [AdminController::class, 'depositoPrimaPdf']);
     Route::post('/admin/prima/cari', [AdminController::class, 'depositoPrimaSearch']);
-    Route::post('/admin/prima/verifikasi', [AdminController::class, 'depositoPrimaerified']);
+    Route::post('/admin/prima/verifikasi', [AdminController::class, 'depositoPrimaVerified']);
     Route::delete('/admin/prima/{id}', [AdminController::class, 'depositoPrimaDestroy']);
 
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');

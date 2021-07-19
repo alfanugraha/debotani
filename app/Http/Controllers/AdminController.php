@@ -277,7 +277,7 @@ class AdminController extends Controller
             ->where('nama_nasabah', 'like', "%".$cari."%")
             ->paginate();
 
-        return view('admin.rahmahdeposhow', ['rahmahdepo' => $rahmahdepo]);
+        return view('admin.rahmahdepo', ['rahmahdepo' => $rahmahdepo]);
     }
 
     public function depositoRahmahVerified(Request $request)
@@ -325,7 +325,7 @@ class AdminController extends Controller
             ->where('nama_usaha', 'like', "%".$cari."%")
             ->paginate();
 
-        return view('admin.primadeposhow', ['primadepo' => $primadepo]);
+        return view('admin.primadepo', ['primadepo' => $primadepo]);
     }
 
     public function depositoPrimaVerified(Request $request)
